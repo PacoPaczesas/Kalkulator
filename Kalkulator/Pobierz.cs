@@ -27,10 +27,37 @@ namespace Pobieranie
             } while (true);
         }
 
+        public static int LiczbeWiekszaOd(int a)
+        {
+            int liczba;
+            do
+            {
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out liczba))
+                {
+                    if (liczba <= a)
+                    {
+                        Console.WriteLine("Za mała wartość. Podaj jeszcze raz");
+                    }
+                    else
+                    {
+                        return liczba;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Błędna wartość. Podaj liczbe całkowita");
+                }
+            } while (true);
+        }
+
+
+
+
         // pobiera liczbę całkowitą z przediału od a do b
         public static int Liczbe(int a, int b) 
         {
-            Console.WriteLine("podaj liczbe całkowitą z przediału od " + a + " do " + b);
+            Console.Write("podaj liczbe całkowitą z przediału od " + a + " do " + b + ": ");
             int liczba;
             do
             {
